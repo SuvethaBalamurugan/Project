@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home page</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <img src="http://www.kctalumni.com/assets/logo.png">
+        </div>
+        <ul class="container">
+            <a href="#" >Home</a>
+            <a href="#" id="aboutUs">About Us</a>
+            <a href="#"id="Event">Event</a> 
+            <a href="#" id="Students">Students</a>
+            <a href="#"id="Alumni gallery"> Alumni gallery</a> 
+            <a href="#" class="login">Login</a>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="main-section">
+            <div class="event">
+                <h2 class="heading">Campus News</h2>
+                <div>
+                    <marquee direction="up" scrollamount="7" style="height:400px;">
+                        <ul>
+                            <li>KUMARAGURU HACKATHON.</li>
+                            <li>COLLEGE PROJECT EXPO 2024.</li>
+                            <li>A TWO-DAY ROADMAP TO SUCCESS 2024.</li>
+                        </ul>
+                    </marquee>
+                </div>
+            </div>
+            <div class="event">
+                <h2 class="heading">Events</h2>
+                <div>
+                    <marquee direction="up" scrollamount="7" style="height:400px;">
+                        <ul>
+                            <li>BIOINDUSTRY CONCLAVE 2024.</li>
+                            <li>INTERNATIONAL PROJECT EXPO 2024.</li>
+                            <li>A TWO-DAY ROADMAP TO SUCCESS 2024.</li>
+                            <li>NATIONAL CONFERENCE ON MEMS, SMART MATERIALS 2024.</li>
+                        </ul>
+                    </marquee>
+                </div>
+            </div>
+            <div class="event">
+                <h2 class="heading">Announcements</h2>
+                <div>
+                    <marquee direction="up" scrollamount="7" style="height:400px;">
+                        <ul>
+                            <li>SRH HACKATHON.</li>
+                            <li>CYTHON 2024.</li>
+                            <li>DYNAMIC 24 HOURS CODING MARATHON 2024.</li>
+                            <li>NANOTECH HACKATHON 2024.</li>
+                        </ul>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function goToLoginPage() {
+            window.location.href = "login.html"; 
+        }
+    
+        function goToAboutUsPage() {
+            window.location.href = "aboutus.html"; 
+        }
+     
+        document.querySelector(".login").addEventListener("click", function(event) {
+            event.preventDefault();
+            goToLoginPage();
+        });
+    
+        document.getElementById("aboutUs").addEventListener("click", function(event) {
+            event.preventDefault();
+            goToAboutUsPage();
+        });
+    
+        function goToeventPage() {
+            window.location.href = "event.html"; 
+        }
+        document.getElementById("Event").addEventListener("click", function(event) {
+            event.preventDefault();
+            goToeventPage();
+        });
+        function goToStudentsPage() {
+            window.location.href = "students page.html"; 
+        }
+        document.getElementById("Students").addEventListener("click", function(event) {
+            event.preventDefault();
+            goToStudentsPage();
+        });
+        function goToalumnigalleryPage() {
+            window.location.href = "alumnigallery.html"; 
+        }
+        document.getElementById("Alumni gallery").addEventListener("click", function(event) {
+            event.preventDefault();
+            goToalumnigalleryPage();
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+.logo{                                                                                  
+    height: 10vh; 
+}
+.cointainer{
+background-color: #fff;
+border-radius: 30px;
+box-shadow: 0 5px 15px rgba(203, 190, 190, 0.35);
+position: relative;
+overflow: hidden;
+width: 768px;
+max-width: 100%;
+min-height: 480px;
+}
+nav {
+    width: 100%;
+    background-image: url("https://www.kct.ac.in/wp-content/uploads/2021/08/Home-banner.png");
+   
+    padding:15px 0px; 
+    display: flex;
+    align-items:left;
+    justify-content:left;
+    flex-direction: column;
+    height: 100vh;
+}
+nav a {
+    color: #fafafa;
+    text-decoration: none;
+    font-size: 17px;
+    border-right: 1px solid #ffc3c3;
+    padding:2px 20px;
+    
+}
+.slider img {
+    width: 50%;
+    display: flex;
+    align-items: right;
+    justify-content:right;
+    flex-direction: column;
+    height: 50vh;
+} 
+.event {
+    width: 31%;
+    margin-right: 1%;
+    float: left;
+}
+.event div {
+    padding:10px;
+    background-color: #f0f3fa;
+}
+.event ul li {
+    margin-bottom: 20px;
+    width: 100%;
+    float: left;
+}

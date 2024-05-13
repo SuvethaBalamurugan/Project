@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="studentspage.css">
+</head>
+<body>
+    <nav>
+    <div class="container">
+        <img src="http://www.kctalumni.com/assets/logo.png">
+    </div>
+    <header>
+        <h1>Student Innovation</h1>
+    </header>
+    </nav>
+    <main>
+        <section id="post-form">
+            <h2>Post Your Project</h2>
+            <form id="project-form">
+                <input type="text" id="Event-name" placeholder="Event name" style="width: 100%; margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <input type="text" id="Project" placeholder="Project Name" style="width: 100%; margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <input type="text" id="Project" placeholder="Project ID" style="width: 100%; margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <textarea id="project-content" placeholder="Describe your project..." style="width: 100%; margin-bottom: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                <input type="file" id="project-image" accept="image/*" style="width: 100%; margin-bottom: 10px;">
+                <input type="submit" value="Post" style="width: 100%; padding: 10px; background-color: #7080d9; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            </form>
+        </section>
+        <section id="posts-feed">
+            <div class="post">
+                <h3>Project Title 1</h3>
+                <p>Description of the project...</p>
+                <button class="view-comments-btn">View Comments</button>
+                <button class="add-comment-btn">Add Comment</button>
+                <form class="comment-form">
+                    <input type="text" placeholder="Your Name and Reg NO">
+                    <textarea placeholder="Your Comment"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+                <div class="comments" style="display: none;">
+                    <div class="comment">
+                        <span class="comment-author">Student 2:</span> This is a great project!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+  
+        const viewCommentButtons = document.querySelectorAll('.view-comments-btn');
+        const addCommentButtons = document.querySelectorAll('.add-comment-btn');
+        const commentForms = document.querySelectorAll('.comment-form');
+
+        viewCommentButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const comments = this.parentNode.querySelector('.comments');
+                comments.style.display = comments.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+
+        addCommentButtons.forEach((button, index) => {
+            button.addEventListener('click', function() {
+                const commentForm = commentForms[index];
+                commentForm.style.display = 'block';
+            });
+        });
+
+        commentForms.forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const nameInput = this.querySelector('input');
+                const textInput = this.querySelector('textarea');
+                const commentsContainer = this.parentNode.querySelector('.comments');
+
+                const commentDiv = document.createElement('div');
+                commentDiv.classList.add('comment');
+                commentDiv.innerHTML = `<span class="comment-author">${nameInput.value}:</span> ${textInput.value}`;
+                commentsContainer.appendChild(commentDiv);
+
+                nameInput.value = '';
+                textInput.value = '';
+                this.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
